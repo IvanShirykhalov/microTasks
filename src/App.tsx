@@ -13,7 +13,7 @@ function App() {
         }*/
 
     const OnClickHandler = (name: string, age?: number) => {
-        if (age){
+        if (age) {
             alert(`Hello i'm ${name}, i'm ${age}`)
         } else {
             alert(`Hello, i'm ${name}`)
@@ -30,12 +30,11 @@ function App() {
     return (
         <div>
             {/*<button onClick={() => {alert('Hi')}}>MyYouTubeChanel-1</button>*/}
-
-{/*            <button onClick={(e) => OnClickHandler('Vasili')}>MyYouTubeChanel-1</button>
+            {/*            <button onClick={(e) => OnClickHandler('Vasili')}>MyYouTubeChanel-1</button>
             <button onClick={(e) => OnClickHandler('Ivan')}>MyYouTubeChanel-2</button>*/}
-            <Button callBack={()=>OnClickHandler('Ivan', 20)} name={'MyYouTubeChanel-1'}/>
-            <Button callBack={()=>OnClickHandler('Vasili', 45)} name={'MyYouTubeChanel-2'}/>
-            <Button callBack={()=>OnClickHandler('Stupid Button')} name={'StupidButton'}/>
+            <Button callBack={() => OnClickHandler('Ivan', 20)} name={'MyYouTubeChanel-1'}/>
+            <Button callBack={() => OnClickHandler('Vasili', 45)} name={'MyYouTubeChanel-2'}/>
+            <Button callBack={() => OnClickHandler('Stupid Button')} name={'StupidButton'}/>
 
             {/*            <button onClick={foo1}>1</button>
             <button onClick={() => foo2(100200)}>2</button>*/}
