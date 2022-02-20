@@ -81,23 +81,35 @@ function App() {
             <Money currentMoney={currentMoney} onClickHandler={onClickHandler}/>
 
         )*/
+    /*    const students = [
+            {id:1, name: 'James', age: 10},
+            {id:2, name: 'Tom', age: 15},
+            {id:3, name: 'Evan', age: 40},
+            {id:4, name: 'Sam', age: 23},
+            {id:5, name: 'Freddy', age: 26},
+            {id:6, name: 'Olivia', age: 14},
+            {id:7, name: 'Vanessa', age: 83},
+            {id:8, name: 'Johnny', age: 93},
+            {id:9, name: 'Dick', age: 27},
+            {id:10, name: 'Bobby', age: 58},
+            {id:11, name: 'Alex', age: 68},
+        ]
 
-    const students = [
-        {id:1, name: 'James', age: 10},
-        {id:2, name: 'Tom', age: 15},
-        {id:3, name: 'Evan', age: 40},
-        {id:4, name: 'Sam', age: 23},
-        {id:5, name: 'Freddy', age: 26},
-        {id:6, name: 'Olivia', age: 14},
-        {id:7, name: 'Vanessa', age: 83},
-        {id:8, name: 'Johnny', age: 93},
-        {id:9, name: 'Dick', age: 27},
-        {id:10, name: 'Bobby', age: 58},
-        {id:11, name: 'Alex', age: 68},
-    ]
+        return (
+            <NewComponent students={students}/>
+        )*/
 
-    return (
-        <NewComponent students={students}/>
+    const [a, setA] = useState(1)
+
+    const onCLickHandler = () => setA(a+1)
+    const onCLickHandlerZero = () => setA(0)
+
+    return(
+        <div>
+            <h1>{a}</h1>
+            <button onClick={onCLickHandler}>+</button>
+            <button onClick={onCLickHandlerZero}>0</button>
+        </div>
     )
 }
 
