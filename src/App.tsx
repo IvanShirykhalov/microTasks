@@ -7,6 +7,7 @@ import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {Money} from "./components/Money";
+import {NewComponent} from "./components/NewComponent";
 
 export type FilterType = 'all' | 'dollar' | 'ruble'
 
@@ -50,38 +51,53 @@ function App() {
                 <Footer footerTitle={'Footer'}/>
             </>
         )*/
+    /*    const [money, setMoney] = useState([
+            {banknote: 'dollar', nominal: 100, number: '1'},
+            {banknote: 'dollar', nominal: 50, number: '2'},
+            {banknote: 'ruble', nominal: 100, number: '3'},
+            {banknote: 'dollar', nominal: 100, number: '4'},
+            {banknote: 'dollar', nominal: 50, number: '5'},
+            {banknote: 'ruble', nominal: 100, number: '6'},
+            {banknote: 'dollar', nominal: 50, number: '7'},
+            {banknote: 'ruble', nominal: 50, number: '8'},
+        ])
 
-    const [money, setMoney] = useState([
-        {banknote: 'dollar', nominal: 100, number: '1'},
-        {banknote: 'dollar', nominal: 50, number: '2'},
-        {banknote: 'ruble', nominal: 100, number: '3'},
-        {banknote: 'dollar', nominal: 100, number: '4'},
-        {banknote: 'dollar', nominal: 50, number: '5'},
-        {banknote: 'ruble', nominal: 100, number: '6'},
-        {banknote: 'dollar', nominal: 50, number: '7'},
-        {banknote: 'ruble', nominal: 50, number: '8'},
-    ])
+        const [filter, setFilter] = useState<FilterType>('all')
+        let currentMoney = money
 
-    const [filter, setFilter] = useState<FilterType>('all')
+        if (filter === 'dollar') {
+            currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'dollar')
+        }
+        if (filter === 'ruble') {
+            currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'ruble')
+        }
 
-    /* let currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'ruble')*/
+        const onClickHandler = (banknote: FilterType) => {
+            setFilter(banknote)
+        }
 
-    let currentMoney = money
 
-    if (filter === 'dollar') {
-        currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'dollar')
-    }
-    if (filter === 'ruble') {
-        currentMoney = money.filter(filteredMoney => filteredMoney.banknote === 'ruble')
-    }
+        return (
+            <Money currentMoney={currentMoney} onClickHandler={onClickHandler}/>
 
-    const onClickHandler = (banknote: FilterType) => {
-        setFilter(banknote)
-    }
+        )*/
 
+    const students = [
+        {id:1, name: 'James', age: 10},
+        {id:2, name: 'Tom', age: 15},
+        {id:3, name: 'Evan', age: 40},
+        {id:4, name: 'Sam', age: 23},
+        {id:5, name: 'Freddy', age: 26},
+        {id:6, name: 'Olivia', age: 14},
+        {id:7, name: 'Vanessa', age: 83},
+        {id:8, name: 'Johnny', age: 93},
+        {id:9, name: 'Dick', age: 27},
+        {id:10, name: 'Bobby', age: 58},
+        {id:11, name: 'Alex', age: 68},
+    ]
 
     return (
-        <Money currentMoney={currentMoney} onClickHandler={onClickHandler}/>
+        <NewComponent students={students}/>
     )
 }
 
